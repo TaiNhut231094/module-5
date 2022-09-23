@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {CalculatorComponent} from './calculator/calculator.component';
 import {ColorComponent} from './color/color.component';
+import {ArticleComponent} from './article/article.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'color',
     component: ColorComponent
+  },
+  {
+    path: '',
+    component: ArticleComponent
   }
 ];
 
@@ -19,4 +24,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
