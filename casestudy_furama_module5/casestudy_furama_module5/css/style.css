@@ -221,6 +221,10 @@ button {
      cursor: pointer;
 }
 
+figure {
+     width: 370px; height: 239px;
+}
+
 .full {
      float: left;
      width: 100%;
