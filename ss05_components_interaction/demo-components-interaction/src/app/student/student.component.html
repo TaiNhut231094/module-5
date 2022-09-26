@@ -1,0 +1,20 @@
+
+<div>
+  <label>ID</label>
+  <input [(ngModel)]="student.id" type="text"/>
+</div>
+<div>
+  <label>Name</label>
+  <input [(ngModel)]="student.name" type="text"/>
+</div>
+<div>
+  <label>Gender</label>
+  <input [(ngModel)]="student.gender" type="text"/>
+</div>
+<div>
+  <label>Address</label>
+  <input [(ngModel)]="student.address" type="text"/>
+</div>
+<div style="text-align: center">
+  <button (click)="createNewStudent()" type="submit" class="btn btn-success">Save</button>
+</div>
