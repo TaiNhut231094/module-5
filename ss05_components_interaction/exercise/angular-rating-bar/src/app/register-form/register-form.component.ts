@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {validatorAge, validatorConfirmPassword} from '../register/validatorAge.validator';
+import {validatorAge, validatorConfirmPassword} from '../register/customValidator.validator';
 
 @Component({
   selector: 'app-register-form',
