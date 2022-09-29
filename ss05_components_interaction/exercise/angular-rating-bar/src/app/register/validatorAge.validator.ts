@@ -13,8 +13,5 @@ export function validatorAge(control: AbstractControl): ValidationErrors | null 
 export function validatorConfirmPassword(control: AbstractControl): ValidationErrors | null {
   const confirmPassword = control.value.confirmPassword;
   const password = control.value.password;
-  if (confirmPassword !== password) {
-    return {confirmPassword: true};
-  }
-  return null;
+  return confirmPassword === password ? null : {confirmPassword: true};
 }
