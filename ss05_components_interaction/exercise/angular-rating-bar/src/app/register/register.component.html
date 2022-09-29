@@ -1,0 +1,121 @@
+<div class="container-fluid">
+  <div class="container mt-4">
+    <div class="row w-50 mx-auto">
+      <h2>Sign up for an account</h2>
+      <form [formGroup]="register" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-2">
+          <label for="email" class="form-label">Email: </label>
+          <input id="email" name="email" type="text" class="form-control" formControlName="email"/>
+          <div *ngIf="!email.valid && (email.dirty
+    || email.touched)">
+            <div class="mb-4 text-danger" [hidden]="!email.errors.required">
+              *Email is required!
+            </div>
+            <div class="mb-4 text-danger" [hidden]="!email.errors.email">
+              *Email invalidate!
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="password" class="form-label">Password: </label>
+          <input id="password" name="password" type="password" class="form-control" formControlName="password"/>
+          <div *ngIf="!password.valid && (password.valid
+     ||password.touched)">
+            <div class="mb-4 text-danger" [hidden]="!password.errors.required">
+              *Password is required!
+            </div>
+            <div class="mb-4 text-danger" [hidden]="!password.errors.minlength">
+              *Min Length is 6!
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="confirmPassword" class="form-label">Confirm Password: </label>
+          <input id="confirmPassword" name="confirmPassword" type="password" class="form-control"
+                 formControlName="confirmPassword"/>
+          <div *ngIf="!confirmPassword.valid && (confirmPassword.valid
+     ||confirmPassword.touched)">
+            <div class="mb-4 text-danger" [hidden]="!confirmPassword.errors.required">
+              *Confirm password is required!
+            </div>
+            <div class="mb-4 text-danger" [hidden]="!confirmPassword.errors.minlength">
+              *Min Length is 6!
+            </div>
+
+          </div>
+          <div class="mb-4 text-danger"
+               *ngIf="register.hasError('confirmPassword') && register.controls.confirmPassword.touched">
+            *Confirm password is not correct!
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="country" class="form-label">Country: </label>
+          <select id="country" name="country" formControlName="country" class="form-select">
+            <option value="">Choose country</option>
+            <option [ngValue]="item" *ngFor="let item of countryList">{{item.name}}</option>
+          </select>
+          <div *ngIf="!country.valid && (country.valid
+     ||country.touched)">
+            <div class="mb-4 text-danger" [hidden]="!country.errors.required">
+              *Country is required!
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="dayOfBirthday" class="form-label">Ngày sinh</label>
+          <input id="dayOfBirthday" name="dayOfBirthday" type="date" class="form-control"
+                 formControlName="dayOfBirthday"/>
+          <div *ngIf="!dayOfBirthday.valid && (dayOfBirthday.valid
+     ||dayOfBirthday.touched)">
+            <div class="mb-4 text-danger" [hidden]="!dayOfBirthday.errors.required">
+              *Age is required!
+            </div>
+            <div class="mb-4 text-danger" [hidden]="!dayOfBirthday.errors.dayOfBirthday">
+              *You are under 18 years old!
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="gender" class="form-label">Giới tính: </label>
+          <input id="gender" name="gender" class="form-check-input" type="radio" value="male" formControlName="gender"/>
+          Male
+          <input id="gender" name="gender" class="form-check-input" type="radio" value="female"
+                 formControlName="gender"/>
+          Female
+          <div *ngIf="!gender.valid && (gender.valid
+     ||gender.touched)">
+            <div class="mb-4 text-danger" [hidden]="!gender.errors.required">
+              *Gender is required!
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label for="phone" class="form-label">Phone: </label>
+          <input id="phone" name="phone" type="text" class="form-control" formControlName="phone"/>
+          <div *ngIf="!phone.valid && (phone.valid
+     ||phone.touched)">
+            <div class="mb-4 text-danger" [hidden]="!phone.errors.required">
+              *Phone is required!
+            </div>
+            <div class="mb-4 text-danger" [hidden]="!phone.errors.pattern">
+              *Phone numbers that start with +84 include 9 - 11 numbers!
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center">
+          <button type="submit" [disabled]="!register.valid" class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
