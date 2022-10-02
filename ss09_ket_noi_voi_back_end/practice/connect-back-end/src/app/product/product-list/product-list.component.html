@@ -30,11 +30,11 @@
               <a [routerLink]="['/product/edit', product.id]" class="edit">Edit</a>
             </td>
             <td>
-              <!--              <a [routerLink]="['/product/delete', product.id]" class="delete">Delete</a>-->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                      (click)="openDelete(product)">
-                Delete
-              </button>
+              <a [routerLink]="['/product/delete', product.id]" class="delete">Delete</a>
+              <!--              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"-->
+              <!--                      (click)="openDelete(product)">-->
+              <!--                Delete-->
+              <!--              </button>-->
 
             </td>
           </tr>
@@ -47,25 +47,25 @@
 
 <!--DeleteModal-->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <span>Bạn có chắc chắn muốn xóa khách hàng:  </span>
-        <span id="nameDelete">{{nameDelete}}</span>
-        <input type="text" hidden name="idDelete" id="idDelete">
-        <p class="text-warning"><small>Hành động này không thể hoàn tác.</small></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct()">Delete</button>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <span>Bạn có chắc chắn muốn xóa khách hàng:  </span>-->
+<!--        <span id="nameDelete">{{nameDelete}}</span>-->
+<!--        <input type="text" hidden name="idDelete" id="idDelete">-->
+<!--        <p class="text-warning"><small>Hành động này không thể hoàn tác.</small></p>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct()">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 

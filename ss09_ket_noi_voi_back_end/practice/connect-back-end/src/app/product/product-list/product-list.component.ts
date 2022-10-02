@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from '../product.service';
+import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
-import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +12,7 @@ export class ProductListComponent implements OnInit {
   idDelete: number;
   nameDelete: string;
 
-  constructor(private productService: ProductService, private toastrService: ToastrService) {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
@@ -21,7 +20,9 @@ export class ProductListComponent implements OnInit {
   }
 
   getAll() {
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe(products => {
+      this.products = products;
+    });
   }
 
   openDelete(product: Product) {
@@ -29,9 +30,8 @@ export class ProductListComponent implements OnInit {
     this.nameDelete = product.name;
   }
 
-  deleteProduct() {
-    this.productService.delete(this.idDelete);
-    this.ngOnInit();
-    this.toastrService.success('Xóa thành công', 'Thông báo');
-  }
+  // deleteProduct() {
+  //   this.productService.delete(this.idDelete);
+  //   this.ngOnInit();
+  // }
 }

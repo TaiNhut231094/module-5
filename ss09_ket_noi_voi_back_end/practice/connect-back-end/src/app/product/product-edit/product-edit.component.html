@@ -1,4 +1,4 @@
-<h1>Tạo sản phẩm mới</h1>
+<h1>Chỉnh sửa sản phẩm</h1>
 <form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
   <table>
     <tr>
@@ -16,6 +16,13 @@
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td>Danh mục sản phẩm</td>
+      <td><select formControlName="category">
+        <option disabled>Chọn danh mục sản phẩm</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      </select></td>
     </tr>
     <tr>
       <td></td>
