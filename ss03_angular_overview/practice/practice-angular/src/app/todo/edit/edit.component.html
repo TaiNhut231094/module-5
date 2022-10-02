@@ -1,0 +1,24 @@
+<h1>Cập nhật thông tin todo</h1>
+<form [formGroup]="todoForm" (ngSubmit)="updateTodo(id)">
+  <table>
+    <tr>
+      <td>Mã todo:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên todo:</td>
+      <td><input type="text" formControlName="content"></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Trạng thái</td>
+      <td><input type="text" formControlName="complete"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Cập nhật</button>
+      </td>
+    </tr>
+  </table>
+</form>

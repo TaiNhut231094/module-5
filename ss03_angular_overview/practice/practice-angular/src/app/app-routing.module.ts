@@ -8,6 +8,7 @@ import {YoutubePlaylistComponent} from './youtube-playlist/youtube-playlist.comp
 import {YoutubePlayerComponent} from './youtube-player/youtube-player.component';
 
 const routes: Routes = [
+  {path: 'todo', loadChildren: () => import('./todo/todo.module').then(module => module.TodoModule)},
   {
     path: 'pet',
     component: PetComponent
