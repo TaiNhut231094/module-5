@@ -1,17 +1,19 @@
-<table>
-  <thead>
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name</th>
-    <th scope="col">Gender</th>
-    <th scope="col">Address</th>
-  </tr>
-  </thead>
-  <tbody *ngFor="let student of arrStudent">
-  <td>{{student.id}}</td>
-  <td>{{student.name}}</td>
-  <td>{{student.gender}}</td>
-  <td>{{student.address}}</td>
-  </tbody>
-</table>
-<app-student (createStudent)="studentChangeHandler($event)"></app-student>
+<!--<table>-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th scope="col">Id</th>-->
+<!--    <th scope="col">Name</th>-->
+<!--    <th scope="col">Gender</th>-->
+<!--    <th scope="col">Address</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody *ngFor="let student of arrStudent">-->
+<!--  <td>{{student.id}}</td>-->
+<!--  <td>{{student.name}}</td>-->
+<!--  <td>{{student.gender}}</td>-->
+<!--  <td>{{student.address}}</td>-->
+<!--  </tbody>-->
+<!--</table>-->
+<!--<app-student (createStudent)="studentChangeHandler($event)"></app-student>-->
+<!--<app-create (submit)="studentChangeHandler($event)"></app-create>-->
+<router-outlet></router-outlet>

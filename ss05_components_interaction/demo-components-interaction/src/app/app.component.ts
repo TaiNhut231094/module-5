@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Student} from "./student/student";
+import {Student} from "./management-student/student";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,11 @@ import {Student} from "./student/student";
 export class AppComponent {
   title = 'demo-components-interaction';
 
-  student: Student = {};
-  arrStudent: Student[] = [];
-
-  studentChangeHandler(value: Student) {
-    this.student = value;
-    this.arrStudent.push(this.student);
-  }
-
+  // student: Student = {};
+  // arrStudent: Student[] = [];
+  //
+  // studentChangeHandler(value: Event) {
+  //   this.student = value;
+  //   this.arrStudent.push(this.student);
+  // }
 }
