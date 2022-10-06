@@ -30,7 +30,6 @@ export class ListComponent implements OnInit {
       this.todos = todos;
     });
   }
-
   change() {
     const value = this.content.value;
     if (value) {

@@ -1,0 +1,48 @@
+{
+  "giaoDich": [
+    {
+      "id": 2,
+      "khachHang": {
+        "id": 1,
+        "tenKH": "Nguyễn Văn Hùng",
+        "soDienThoai": "0915111234",
+        "email": "hungnguyen@gmail.com"
+      },
+      "ngayGD": "1981-07-08",
+      "donGia": 700000,
+      "dienTich": 200
+    },
+    {
+      "khachHang": {
+        "id": 3,
+        "tenKH": "Dương Văn Quý",
+        "soDienThoai": "0984556314",
+        "email": "quyduong@gmail.com"
+      },
+      "ngayGD": "2022-10-06",
+      "donGia": "2000000",
+      "dienTich": "200",
+      "id": 3
+    }
+  ],
+  "khachHang": [
+    {
+      "id": 1,
+      "tenKH": "Nguyễn Văn Hùng",
+      "soDienThoai": "0915111234",
+      "email": "hungnguyen@gmail.com"
+    },
+    {
+      "id": 2,
+      "tenKH": "Võ Trọng Thái Hào",
+      "soDienThoai": "0988256314",
+      "email": "haonguyen@gmail.com"
+    },
+    {
+      "id": 3,
+      "tenKH": "Dương Văn Quý",
+      "soDienThoai": "0984556314",
+      "email": "quyduong@gmail.com"
+    }
+  ]
+}

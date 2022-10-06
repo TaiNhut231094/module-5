@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng quản lý giao dich</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="blog">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2 align="center">GIAO DỊCH</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="container-fluid">
+              <div class="table-responsive">
+                <div class="table-wrapper">
+                  <div class="table-title">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h2>Quản lý <b>Giao dịch</b></h2>
+                      </div>
+                      <div class="col-lg-2">
+                        <a routerLink="/giaoDich/create" class="btn btn-success">
+                          <i class="material-icons">&#xE147;</i> <span>Thêm mới giao dịch</span></a>
+                      </div>
+                      <div class="col-lg-3">
+                        <input class="form-control me-2" type="search"
+                               placeholder="search by dien tich"
+                               aria-label="Search" [(ngModel)]="dienTichSearch">
+                      </div>
+                      <div class="col-lg-3">
+                        <input class="form-control me-2" type="search"
+                               placeholder="search by ten khách hàng"
+                               aria-label="Search" [(ngModel)]="tenKHSearch">
+                      </div>
+                      <div class="col-lg-1" style="padding-left: 0px">
+                        <button class="btn btn-success" type="submit" (click)="getValueSearch()" value="Tìm kiếm">
+                          Tìm kiếm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <table class="table table-striped table-hover" border="1">
+                    <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Khách hàng</th>
+                      <th>Ngày giao dịch</th>
+                      <th>Đơn giá</th>
+                      <th>Diện tích</th>
+                      <th>Sửa</th>
+                      <th>Xóa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of giaoDichDS | paginate: {id: 'listing_pagination',
+                     itemsPerPage: 2, currentPage: page, totalItems: totalRecords}, index as i">
+                      <th>{{i + 1}}</th>
+                      <td>{{item.khachHang.tenKH}}</td>
+                      <td>{{item.ngayGD | date: 'dd/MM/yyyy'}}</td>
+                      <td>{{item.donGia}}</td>
+                      <td>{{item.dienTich}}</td>
+                      <td>
+                        <a [routerLink]="['/giaoDich/edit', item.id]" class="edit"><i
+                          class="material-icons"
+                          data-toggle="tooltip"
+                          title="Edit">&#xE254;</i></a>
+                      </td>
+                      <td>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Launch demo modal
+                        </button>
+<!--                        <a href="#deleteGiaoDichModal" class="delete" data-toggle="modal">-->
+<!--                          <i class="material-icons" data-toggle="tooltip" (click)="openDelete(item)"-->
+<!--                             title="Delete">&#xE872;</i></a>-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <pagination-controls align="center" id="listing_pagination" maxSize="5" directionLinks="true"
+                                               (pageChange)="page = $event"></pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--DeleteModal-->
+<!--<div id="deleteGiaoDichModal" class="modal fade">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Xóa giao dịch</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <span>Bạn có chắc chắn muốn xóa giao dịch  </span>-->
+<!--        <span id="nameDelete">{{nameDelete}}</span>-->
+<!--        <p class="text-warning"><small>Hành động này không thể hoàn tác.</small></p>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">-->
+<!--        <input type="submit" class="btn btn-danger" data-dismiss="modal" value="Delete" (click)="deleteGiaoDich()">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

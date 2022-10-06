@@ -1,0 +1,69 @@
+
+<div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2 align="center">CHỈNH SỬA GIAO DỊCH</h2>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container mt-4">
+          <div class="row w-50 mx-auto" style="background-color: white">
+            <div class="col-lg-12">
+              <form [formGroup]="giaoDichForm" (ngSubmit)="updateGiaoDich()">
+                <div class="mb-2">
+                  <label for="khachHang" class="form-label">Khách hàng</label>
+                  <select id="khachHang" name="khachHang" class="form-select" formControlName="khachHang"
+                          [compareWith]="compareWithId">
+                    <option selected value="" disabled>---Choose khách hàng---</option>
+                    <option *ngFor="let i of khachHangDS" [ngValue]="i">{{i.tenKH}}</option>
+                  </select>
+                  <div class="mb-4 text-danger"
+                       *ngIf="giaoDichForm.controls.khachHang.hasError('required') && (giaoDichForm.controls.khachHang.touched)">
+                    *Tên khách hàng không được để trống!
+                  </div>
+                </div>
+
+                <div class="mb-2">
+                  <label for="ngayGD" class="form-label">Ngày giao dịch</label>
+                  <input id="ngayGD" name="ngayGD" type="date" class="form-control"
+                         formControlName="ngayGD"/>
+                  <div class="mb-4 text-danger"
+                       *ngIf="giaoDichForm.controls.ngayGD.hasError('required') && (giaoDichForm.controls.ngayGD.touched)">
+                    *Ngày giao dịch không được để trống!
+                  </div>
+                </div>
+
+                <div class="mb-2">
+                  <label for="donGia" class="form-label">Đơn giá</label>
+                  <input id="donGia" name="donGia" type="text" class="form-control"
+                         formControlName="donGia"/>
+                  <div class="mb-4 text-danger"
+                       *ngIf="giaoDichForm.controls.donGia.hasError('required') && (giaoDichForm.controls.donGia.touched)">
+                    *Đơn giá không được để trống!
+                  </div>
+                </div>
+
+                <div class="mb-2">
+                  <label for="dienTich" class="form-label">Diện tích</label>
+                  <input id="dienTich" name="dienTich" type="text" class="form-control"
+                         formControlName="dienTich"/>
+                  <div class="mb-4 text-danger"
+                       *ngIf="giaoDichForm.controls.dienTich.hasError('required') && (giaoDichForm.controls.dienTich.touched)">
+                    *Diện tích không được để trống!
+                  </div>
+                </div>
+                <br>
+                <div style="text-align: center">
+                  <a routerLink=""><input class="btn btn-success mx-2" type="button" value="Back"></a>
+                  <button type="submit" class="btn btn-success" [disabled]="!giaoDichForm.valid">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

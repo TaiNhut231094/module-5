@@ -17,6 +17,9 @@ import {SongService} from './service/song.service';
 import {ToastrModule} from 'ngx-toastr';
 import {HttpClientModule} from '@angular/common/http';
 import {TodoModule} from './todo/todo.module';
+import {ImageGalleryModule} from './image-gallery/image-gallery.module';
+import {ImageGalleryComponent} from './image-gallery/image-gallery.component';
+import {GalleryConfig} from './image-gallery/token';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {TodoModule} from './todo/todo.module';
     ProgressBarComponent,
     TimelinesComponent,
     YoutubePlaylistComponent,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    ImageGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ import {TodoModule} from './todo/todo.module';
     ReactiveFormsModule,
     TodoModule,
     HttpClientModule,
+    ImageGalleryModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-top-right',
@@ -45,7 +50,8 @@ import {TodoModule} from './todo/todo.module';
   ],
   providers: [DateUtilService,
     ProductService,
-    SongService],
+    SongService,
+    {provide: GalleryConfig, useValue: 3}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

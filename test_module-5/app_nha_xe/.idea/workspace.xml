@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36708d75-7292-4c3b-8d4f-92bde3e5df58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../test/src/app/data/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/footer/footer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/header/header.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/header/header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/app/header/header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/assets/images/lua-chin-19-16631441214491873240768.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/assets/images/photo-2-1663156015832983240000.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/todo/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss03_angular_overview/practice/practice-angular/src/app/todo/list/list.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Figi8y2z6Vff8gs9n7voCSo60g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="AppNhaXeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="app_nha_xe" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.app_nha_xe.AppNhaXeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36708d75-7292-4c3b-8d4f-92bde3e5df58" name="Default Changelist" comment="" />
+      <created>1664980442970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664980442970</updated>
+      <workItem from="1664980449309" duration="579000" />
+      <workItem from="1665010779920" duration="177000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="328" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1665010898539">
+      <screen x="0" y="0" width="1470" height="864" />
+    </state>
+    <state x="328" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1470.864@0.0.1470.864" timestamp="1665010898539" />
+    <state x="516" y="187" key="FileChooserDialogImpl" timestamp="1664981083087">
+      <screen x="0" y="0" width="1470" height="864" />
+    </state>
+    <state x="516" y="187" key="FileChooserDialogImpl/0.0.1470.864@0.0.1470.864" timestamp="1664981083087" />
+    <state x="176" y="93" key="new project wizard" timestamp="1664981121924">
+      <screen x="0" y="0" width="1470" height="864" />
+    </state>
+    <state x="176" y="93" key="new project wizard/0.0.1470.864@0.0.1470.864" timestamp="1664981121924" />
+  </component>
+</project>
