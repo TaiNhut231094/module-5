@@ -23,7 +23,9 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllNhaXe();
+    this.nhaXeService.getAll(this.indexPagination).subscribe((nhaXe: any) => {
+      this.nhaXeList = nhaXe.content;
+    });
     this.nhaXeService.getAllNotPagination().subscribe((nhaXe: NhaXe[]) => {
       this.listNhaXeNotPagination = nhaXe;
       if ((this.listNhaXeNotPagination.length % 5) !== 0) {
@@ -37,12 +39,6 @@ export class ListComponent implements OnInit {
     this.nameDelete = item.soXe;
   }
 
-  getAllNhaXe() {
-    this.nhaXeService.getAll(this.indexPagination).subscribe((nhaXe: any) => {
-      this.nhaXeList = nhaXe.content;
-    });
-  }
-
   deleteAppNhaXe() {
     this.nhaXeService.delete(this.idDelete).subscribe(() => {
       this.ngOnInit();
@@ -51,24 +47,27 @@ export class ListComponent implements OnInit {
   }
 
   firstPage() {
-    this.indexPagination = 1;
+    this.indexPagination = 0;
+    this.ngOnInit();
   }
 
 
   nextPage() {
     this.indexPagination = this.indexPagination + 1;
-    if (this.indexPagination > this.totalRecords) {
-      this.indexPagination = this.indexPagination - 1;
-    }
-    this.nhaXeService.getAll((this.indexPagination * 5) - 5).subscribe((nhaXe: NhaXe[]) => {
-      this.nhaXeList = nhaXe;
-    });
+    // if (this.indexPagination > this.totalRecords) {
+    //   this.indexPagination = this.indexPagination - 1;
+    // }
+    // this.nhaXeService.getAll((this.indexPagination * 5) - 5).subscribe((nhaXe: NhaXe[]) => {
+    //   this.nhaXeList = nhaXe;
+    // });
+    this.ngOnInit();
   }
 
   privousPage() {
     this.indexPagination = this.indexPagination - 1;
-    if (this.indexPagination === 0) {
-      this.indexPagination = 1;
-    }
+    // if (this.indexPagination === 0) {
+    //   this.indexPagination = 1;
+    // }
+    this.ngOnInit();
   }
 }
