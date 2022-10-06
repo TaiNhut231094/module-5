@@ -63,7 +63,7 @@ export class EditComponent implements OnInit {
 
   updateAppNhaXe() {
     const nhaXe = this.nhaXeForm.value;
-    this.nhaXeService.updateNhaXe(nhaXe).subscribe(() => {
+    this.nhaXeService.updateNhaXe(this.id, nhaXe).subscribe(() => {
       this.router.navigateByUrl('');
       this.toastrService.success('Chỉnh sửa thành công', 'Thông báo');
     });

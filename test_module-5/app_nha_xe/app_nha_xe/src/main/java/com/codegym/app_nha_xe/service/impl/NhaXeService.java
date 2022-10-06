@@ -33,9 +33,9 @@ public class NhaXeService implements INhaXeService {
     }
 
     @Override
-    public void update(NhaXe nhaXe) {
+    public void update(Integer id, NhaXe nhaXe) {
         this.nhaXeRepository.updateNhaXe(nhaXe.getEmail(), nhaXe.getGioDen(), nhaXe.getGioDi(), nhaXe.getLoaiXe(), nhaXe.getNhaXe(),
-                nhaXe.getSoDT(), nhaXe.getSoXe(), nhaXe.getDiemDen().getId(), nhaXe.getDiemDi().getId(), nhaXe.getId());
+                nhaXe.getSoDT(), nhaXe.getSoXe(), nhaXe.getDiemDen().getId(), nhaXe.getDiemDi().getId(), id);
     }
 
     @Override

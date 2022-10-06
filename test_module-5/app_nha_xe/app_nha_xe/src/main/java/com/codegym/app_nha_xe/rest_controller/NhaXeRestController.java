@@ -88,9 +88,9 @@ public class NhaXeRestController {
         return new ResponseEntity<>(nhaXe, HttpStatus.OK);
     }
 
-    @PutMapping(value = "/editNhaXe")
-    public ResponseEntity<Void> updateNhaXe(@RequestBody NhaXe nhaXe) {
-        this.nhaXeService.update(nhaXe);
+    @PutMapping(value = "/editNhaXe/{id}")
+    public ResponseEntity<Void> updateNhaXe(@PathVariable Integer id, @RequestBody NhaXe nhaXe) {
+        this.nhaXeService.update(id, nhaXe);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

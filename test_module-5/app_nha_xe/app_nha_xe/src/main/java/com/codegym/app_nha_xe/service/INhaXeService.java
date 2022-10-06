@@ -14,7 +14,7 @@ public interface INhaXeService {
 
     void save(NhaXe nhaXe);
 
-    void update(NhaXe nhaXe);
+    void update(Integer id, NhaXe nhaXe);
 
     void delete(Integer id);
 

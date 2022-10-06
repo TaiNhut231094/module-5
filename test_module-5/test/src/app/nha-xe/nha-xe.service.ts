@@ -17,7 +17,7 @@ export class NhaXeService {
   }
 
   getAll(page: number): Observable<NhaXe[]> {
-    return this.http.get<NhaXe[]>(API_URL + '/nhaXeRest/listPage?page= ' + page);
+    return this.http.get<NhaXe[]>(API_URL + '/nhaXeRest/listPage?page=' + page);
   }
 
   getAllNotPagination(): Observable<NhaXe[]> {
@@ -40,8 +40,8 @@ export class NhaXeService {
     return this.http.get<NhaXe>(`${API_URL}/nhaXeRest/${id}`);
   }
 
-  updateNhaXe(nhaXe: NhaXe): Observable<NhaXe> {
-    return this.http.put<NhaXe>(`${API_URL}/nhaXeRest/editNhaXe`, nhaXe);
+  updateNhaXe(id: number, nhaXe: NhaXe): Observable<NhaXe> {
+    return this.http.put<NhaXe>(`${API_URL}/nhaXeRest/editNhaXe/${id}`, nhaXe);
   }
 
   delete(id: number): Observable<NhaXe> {

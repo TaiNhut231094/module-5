@@ -16,16 +16,14 @@ export class ListComponent implements OnInit {
   idDelete: number;
   nameDelete: string;
   totalRecords: number;
-  indexPagination: number;
+  indexPagination = 0;
 
   constructor(private nhaXeService: NhaXeService,
               private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
-    this.nhaXeService.getAll(5).subscribe((nhaXe) => {
-      this.nhaXeList = nhaXe;
-    });
+    this.getAllNhaXe();
     this.nhaXeService.getAllNotPagination().subscribe((nhaXe: NhaXe[]) => {
       this.listNhaXeNotPagination = nhaXe;
       if ((this.listNhaXeNotPagination.length % 5) !== 0) {
@@ -37,6 +35,12 @@ export class ListComponent implements OnInit {
   openDelete(item: NhaXe) {
     this.idDelete = item.id;
     this.nameDelete = item.soXe;
+  }
+
+  getAllNhaXe() {
+    this.nhaXeService.getAll(this.indexPagination).subscribe((nhaXe: any) => {
+      this.nhaXeList = nhaXe.content;
+    });
   }
 
   deleteAppNhaXe() {
